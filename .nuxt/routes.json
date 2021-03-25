@@ -1,0 +1,32 @@
+[
+  {
+    "name": "course",
+    "path": "/course",
+    "component": "D:\\\\zc\\\\guli_user_web\\\\pages\\\\course\\\\index.vue",
+    "chunkName": "pages/course/index"
+  },
+  {
+    "name": "teacher",
+    "path": "/teacher",
+    "component": "D:\\\\zc\\\\guli_user_web\\\\pages\\\\teacher\\\\index.vue",
+    "chunkName": "pages/teacher/index"
+  },
+  {
+    "name": "course-id",
+    "path": "/course/:id",
+    "component": "D:\\\\zc\\\\guli_user_web\\\\pages\\\\course\\\\_id.vue",
+    "chunkName": "pages/course/_id"
+  },
+  {
+    "name": "teacher-id",
+    "path": "/teacher/:id",
+    "component": "D:\\\\zc\\\\guli_user_web\\\\pages\\\\teacher\\\\_id.vue",
+    "chunkName": "pages/teacher/_id"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\zc\\\\guli_user_web\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]
