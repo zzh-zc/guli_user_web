@@ -4,11 +4,13 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _67f2ce2c = () => interopDefault(import('..\\pages\\course\\index.vue' /* webpackChunkName: "pages/course/index" */))
-const _1db0782d = () => interopDefault(import('..\\pages\\teacher\\index.vue' /* webpackChunkName: "pages/teacher/index" */))
-const _0b59cdd2 = () => interopDefault(import('..\\pages\\course\\_id.vue' /* webpackChunkName: "pages/course/_id" */))
-const _b52ebc56 = () => interopDefault(import('..\\pages\\teacher\\_id.vue' /* webpackChunkName: "pages/teacher/_id" */))
-const _52736336 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _c0279bba = () => interopDefault(import('..\\pages\\course\\index.vue' /* webpackChunkName: "pages/course/index" */))
+const _5118d3b5 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
+const _1675ad07 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register" */))
+const _7303f3d8 = () => interopDefault(import('..\\pages\\teacher\\index.vue' /* webpackChunkName: "pages/teacher/index" */))
+const _1c16614b = () => interopDefault(import('..\\pages\\course\\_id.vue' /* webpackChunkName: "pages/course/_id" */))
+const _a7830508 = () => interopDefault(import('..\\pages\\teacher\\_id.vue' /* webpackChunkName: "pages/teacher/_id" */))
+const _f11d9ec4 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -23,23 +25,31 @@ export const routerOptions = {
 
   routes: [{
     path: "/course",
-    component: _67f2ce2c,
+    component: _c0279bba,
     name: "course"
   }, {
+    path: "/login",
+    component: _5118d3b5,
+    name: "login"
+  }, {
+    path: "/register",
+    component: _1675ad07,
+    name: "register"
+  }, {
     path: "/teacher",
-    component: _1db0782d,
+    component: _7303f3d8,
     name: "teacher"
   }, {
     path: "/course/:id",
-    component: _0b59cdd2,
+    component: _1c16614b,
     name: "course-id"
   }, {
     path: "/teacher/:id",
-    component: _b52ebc56,
+    component: _a7830508,
     name: "teacher-id"
   }, {
     path: "/",
-    component: _52736336,
+    component: _f11d9ec4,
     name: "index"
   }],
 
