@@ -19,5 +19,11 @@ export default {
       url: `/eduservice/front/course/${courseId}`,
       method: 'get'
     })
+  },
+  getCourseInfo(courseId) {
+    return request({
+      url: `/eduservice/front/course/getCourseInfo/${courseId}`,
+      method: 'get'
+    })
   }
 }

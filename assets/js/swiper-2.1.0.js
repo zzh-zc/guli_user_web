@@ -587,7 +587,7 @@ var Swiper = function (selector, params) {
         _this.height = _height;
 
         var slideWidth, slideHeight, slideMaxHeight, wrapperWidth, wrapperHeight, slideLeft;
-        var i; // loop index.vue variable to avoid JSHint W004 / W038
+        var i; // loop index variable to avoid JSHint W004 / W038
         containerSize = isH ? _width : _height;
         var wrapper = _this.wrapper;
 
@@ -2063,7 +2063,7 @@ var Swiper = function (selector, params) {
             _this.slides[_this.activeIndex].className += ' ' + params.slideActiveClass;
         }
 
-        //Update loop index.vue
+        //Update loop index
         if (params.loop) {
             var ls = _this.loopedSlides;
             _this.activeLoopIndex = _this.activeIndex - ls;
@@ -2152,7 +2152,7 @@ var Swiper = function (selector, params) {
             if (!_this.visibleSlides) _this.calcVisibleSlides(position);
             //Get Visible Indexes
             var visibleIndexes = [];
-            var j; // lopp index.vue - avoid JSHint W004 / W038
+            var j; // lopp index - avoid JSHint W004 / W038
             for (j = 0; j < _this.visibleSlides.length; j++) {
                 var visIndex = _this.slides.indexOf(_this.visibleSlides[j]) - indexOffset;
 
@@ -2411,7 +2411,7 @@ var Swiper = function (selector, params) {
             _this.setWrapperTranslate(newTransform);
             _this.setWrapperTransition(0);
         }
-        var i; // loop index.vue
+        var i; // loop index
         //New Slides
         if (params.loader.logic === 'reload') {
             _this.wrapper.innerHTML = '';
@@ -2484,7 +2484,7 @@ var Swiper = function (selector, params) {
             _this.startAutoplay();
         }
         /**
-         * Set center slide index.vue.
+         * Set center slide index.
          *
          * @author        Tomaz Lovrec <tomaz.lovrec@gmail.com>
          */

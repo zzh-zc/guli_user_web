@@ -3,42 +3,63 @@
     "name": "course",
     "path": "/course",
     "component": "D:\\\\zzh\\\\guli_user_web\\\\pages\\\\course\\\\index.vue",
-    "chunkName": "pages/course/index"
+    "chunkName": "pages/course/index",
+    "_name": "_c0279bba"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "D:\\\\zzh\\\\guli_user_web\\\\pages\\\\login.vue",
-    "chunkName": "pages/login"
+    "chunkName": "pages/login",
+    "_name": "_5118d3b5"
   },
   {
     "name": "register",
     "path": "/register",
     "component": "D:\\\\zzh\\\\guli_user_web\\\\pages\\\\register.vue",
-    "chunkName": "pages/register"
+    "chunkName": "pages/register",
+    "_name": "_1675ad07"
   },
   {
     "name": "teacher",
     "path": "/teacher",
     "component": "D:\\\\zzh\\\\guli_user_web\\\\pages\\\\teacher\\\\index.vue",
-    "chunkName": "pages/teacher/index"
+    "chunkName": "pages/teacher/index",
+    "_name": "_7303f3d8"
   },
   {
     "name": "course-id",
     "path": "/course/:id",
     "component": "D:\\\\zzh\\\\guli_user_web\\\\pages\\\\course\\\\_id.vue",
-    "chunkName": "pages/course/_id"
+    "chunkName": "pages/course/_id",
+    "_name": "_1c16614b"
+  },
+  {
+    "name": "order-oid",
+    "path": "/order/:oid?",
+    "component": "D:\\\\zzh\\\\guli_user_web\\\\pages\\\\order\\\\_oid.vue",
+    "chunkName": "pages/order/_oid",
+    "_name": "_17cd72a5"
+  },
+  {
+    "name": "pay-id",
+    "path": "/pay/:id?",
+    "component": "D:\\\\zzh\\\\guli_user_web\\\\pages\\\\pay\\\\_id.vue",
+    "chunkName": "pages/pay/_id",
+    "_name": "_99bfc514"
   },
   {
     "name": "teacher-id",
     "path": "/teacher/:id",
     "component": "D:\\\\zzh\\\\guli_user_web\\\\pages\\\\teacher\\\\_id.vue",
-    "chunkName": "pages/teacher/_id"
+    "chunkName": "pages/teacher/_id",
+    "_name": "_a7830508"
   },
   {
     "name": "index",
     "path": "/",
     "component": "D:\\\\zzh\\\\guli_user_web\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_f11d9ec4"
   }
 ]

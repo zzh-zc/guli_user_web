@@ -38,8 +38,11 @@
                 <a class="c-fff vam" title="收藏" href="#" >收藏</a>
               </span>
             </section>
-            <section class="c-attr-mt">
-              <a href="#" title="立即观看" class="comm-btn c-btn-3">立即观看</a>
+            <section v-if="isbuy || Number(course.price)===0" class="c-attr-mt">
+              <a href="#" title="立即观看" class="comm-btn c-btn-3" >立即观看</a>
+            </section>
+            <section v-else class="c-attr-mt">
+              <a href="#" title="立即购买" class="comm-btn c-btn-3" @click="createOrder()">立即购买</a>
             </section>
           </section>
         </aside>
@@ -170,15 +173,33 @@
 
 <script>
 import course from '@/api/course'
+import order from '@/api/order'
 export default {
   asyncData({ params, error }) {
-    return course.getById(params.id).then(response => {
-      console.log(response)
-      return {
-        course: response.data.data.course,
-        chapterList: response.data.data.chapterVoList
-      }
-    })
+    return course.getCourseInfo(params.id)
+      .then(response => {
+        return {
+          courseId: params.id,
+          course: response.data.data.courseFrontInfo,
+          chapterList: response.data.data.chapterVideoList,
+          isbuy: response.data.data.isbuy
+        }
+      })
+  },
+  created() {
+    // this.initCourseInfo()
+  },
+  methods: {
+    // 根据课程id，调用接口方法生成订单
+    createOrder() {
+      console.log(this.course)
+      order.createOrder(this.course.id).then(response => {
+        if (response.data.success) {
+          // 订单创建成功，跳转到订单页面
+          this.$router.push({ path: '/order/' + response.data.data.orderId })
+        }
+      })
+    }
   }
 }
 </script>

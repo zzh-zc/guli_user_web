@@ -162,7 +162,7 @@ var scrollLoad = (function (options) {
                 o = docImg[i], tag = o.nodeName.toLowerCase();
             if (o) {
                 postPage = o.getBoundingClientRect().top + window.document.documentElement.scrollTop + window.document.body.scrollTop;
-                postWindow = postPage + Number(this.getStyle(o, 'height').replace('px', ''));
+                postWindow = postPage + Number(this.getStyle(o, 'height').replace('px', ''));	
                 if ((postPage > offsetPage && postPage < offsetWindow) || (postWindow > offsetPage && postWindow < offsetWindow)) {	//判断元素始终在可见区域内
                     if (tag === "img" && attrSrc !== null) {
                         o.setAttribute("src", attrSrc);
@@ -182,11 +182,11 @@ var scrollLoad = (function (options) {
 //公共弹框
 /*******
  *** @param dTitle : 弹框标题名称;
- *** @param index : 调用弹框的类型;
- *** index.vue == 0 : 支付结果反馈弹出框;
- *** index.vue == 1 : 正确提示弹出框;
- *** index.vue == 2 : 错误提示弹出框;
- *** index.vue == 3 : 确认提示弹出框；
+ *** @param index : 调用弹框的类型; 
+ *** index == 0 : 支付结果反馈弹出框;
+ *** index == 1 : 正确提示弹出框;
+ *** index == 2 : 错误提示弹出框;  
+ *** index == 3 : 确认提示弹出框；
 */
 function dialog(dTitle,msg,index,url) {
 	 $("#tisbutt,.dClose,#qujiao").click();
@@ -208,8 +208,8 @@ function dialog(dTitle,msg,index,url) {
     dialogEle.css({"top" : (dTop-(dH/2)) , "margin-left" : -(dW/2)});
     dHead.css({"width" : (dW-"12")}); //ie7下兼容性;
     $("#tisbutt,.dClose,#qujiao").bind("click", function() {dialogEle.remove();oBg.remove();});
-
-
+    
+    
 }
 
 
@@ -262,7 +262,7 @@ function addPraise(targetId,type,obj){
 					//点赞数加一
 					var praiseNum = $(".addPraise"+targetId+"_"+type).html();
 					$(".addPraise"+targetId+"_"+type).html(praiseNum*1+1);
-
+					
 					//修改点赞数
 					var priaseCount=parseInt($(obj).children("span").html());
 					$(obj).children("span").html(priaseCount+1);
@@ -300,7 +300,7 @@ function queryUnReadNum(){
 			var systemNum = letter.SMNum;
 			//未读站内信数
 			var letterNum = letter.mNum;
-
+			
 			//总未读消息数
 			unReadNum = letter.unReadNum;
 			if(unReadNum!=0){
@@ -417,18 +417,18 @@ function placeholderFun() {
 
   //当浏览器不支持placeholder属性时，调用placeholder函数
   if(!supportPlaceholder){
-  	$("input").not("input[type='password']").each(//把input绑定事件 排除password框
-          function(){
-              if($(this).val()=="" && $(this).attr("placeholder")!=""){
-                  $(this).val($(this).attr("placeholder"));
-                  $(this).focus(function(){
-                      if($(this).val()==$(this).attr("placeholder")) $(this).val("");
-                  });
-                  $(this).blur(function(){
-                      if($(this).val()=="") $(this).val($(this).attr("placeholder"));
-                  });
-              }
-      });
+  	$("input").not("input[type='password']").each(//把input绑定事件 排除password框  
+          function(){  
+              if($(this).val()=="" && $(this).attr("placeholder")!=""){  
+                  $(this).val($(this).attr("placeholder"));  
+                  $(this).focus(function(){  
+                      if($(this).val()==$(this).attr("placeholder")) $(this).val("");  
+                  });  
+                  $(this).blur(function(){  
+                      if($(this).val()=="") $(this).val($(this).attr("placeholder"));  
+                  });  
+              }  
+      });  
       //对password框的特殊处理
       var pwdField    = $("input[type=password]");
       pwdField.each(function() {
@@ -436,21 +436,21 @@ function placeholderFun() {
     	   	  index = _this.index(),
     	      pwdVal = _this.attr('placeholder');
     	  _this.after('<input id="pwdPlaceholder'+index+'" type="text" value='+pwdVal+' autocomplete="off" />');
-    	  var pwdFieldColn = _this.next();
-    	  pwdFieldColn.show();
+    	  var pwdFieldColn = _this.next();  
+    	  pwdFieldColn.show();  
           _this.hide();
-
-          pwdFieldColn.focus(function(){
-        	  pwdFieldColn.hide();
-              _this.show();
-              _this.focus();
-          });
-
-          _this.blur(function(){
-              if(_this.val() == '') {
-            	  pwdFieldColn.show();
-                  _this.hide();
-              }
+            
+          pwdFieldColn.focus(function(){  
+        	  pwdFieldColn.hide();  
+              _this.show();  
+              _this.focus();  
+          });  
+            
+          _this.blur(function(){  
+              if(_this.val() == '') {  
+            	  pwdFieldColn.show();  
+                  _this.hide();  
+              }  
           });
       });
   }
@@ -500,7 +500,7 @@ function dialogLogin(type){
 				$(".e-l-jy").html('<font class="fsize12 c-orange">'+result.message+'</font>');
 			}else{
 				if(type==1){
-					window.location.href="/uc/index.vue";
+					window.location.href="/uc/index";
 				}else{
 					window.location.reload();
 				}
@@ -513,7 +513,7 @@ function dialogLogin(type){
 }
 
 /**
- * 注册新用户
+ * 注册新用户 
  */
 function dialogRegister() {
 	$(".e-l-jy").html('');
@@ -527,7 +527,7 @@ function dialogRegister() {
 		$("#u-email-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入正确的邮箱！</span>');
 		return;
 	};
-
+	
 	var mobileVal=$("#u-mobile-reg").val();
 	if(mobileVal==""){//验证手机是否为空
 		$("#u-mobile-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入用户手机号！</span>');
@@ -538,7 +538,7 @@ function dialogRegister() {
 		$("#u-mobile-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入正确的手机！</span>');
 		return;
 	};
-
+	
 	if($("#u-password-reg").val().trim()==""){//验证密码是否为空
 		$("#u-password-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入密码！</span>');
 		return;
@@ -555,7 +555,7 @@ function dialogRegister() {
 		$("#u-passwordre-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入确认密码！</span>');
 		return;
 	}
-
+	
 	if($("#u-randomcode-reg").val().trim()==""){//验证 验证码是否为空
 		$("#u-randomcode-reg").next().next().next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入验证码！</span>');
 		return;
